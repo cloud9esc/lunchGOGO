@@ -21,12 +21,27 @@
   top: 30px;
   left: 30px;
 }
+.NewMenu__deleteform {
+  position: absolute;
+  top: 90vh;
+  left: 40px;
+}
 .NewMenu__input {
   font-size: calc(8px + 2vmin);
   background-color: transparent;
   border: 1px solid white;
   color: white;
   box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.2);
+  padding-left: 8px;
+}
+.NewMenu__input.delete {
+  width: 10vw;
+  font-size: calc(8px + 2vmin);
+  background-color: transparent;
+  border:none;
+  border-bottom: 1px solid white;
+  color: white;
+  box-shadow: none;
   padding-left: 8px;
 }
 .NewMenu__input:focus {

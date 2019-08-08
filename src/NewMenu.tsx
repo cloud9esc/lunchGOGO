@@ -5,6 +5,7 @@ class NewMenu extends React.Component {
   state = {
     isInput: false,
     newMenu: "",
+    delMenu: ""
   }
 
   toggle = () => {
@@ -49,8 +50,33 @@ class NewMenu extends React.Component {
     }
     this.setState({isInput: false});
   }
+
+  deleteMenu = async (ev:any) => {
+    ev.preventDefault();
+    if (this.state.newMenu === "") {
+      this.setState({isInput:false})
+    }
+    const body = new FormData();
+    body.append("menu", this.state.delMenu);
+    const res = await fetch("http://192.168.1.24:8000/api/v1/lunch", {
+      body,
+      headers: {
+        accept: "application/json",
+      },
+      method: "DELETE",
+    });
+    const {status, message} = await res.json();
+    if(status === "failed") {
+      alert(message);
+    }
+    if (status === "success") {
+      alert("굿바이 " + this.state.delMenu);
+      window.location.reload();
+    }
+    this.setState({isInput: false})
+  }
   render() {
-    const { isInput, newMenu } = this.state;
+    const { isInput, newMenu, delMenu } = this.state;
     return (
       <div className="NewMenu">
         {!isInput && <button className="NewMenu__button" onClick={this.toggle}>
@@ -68,7 +94,17 @@ class NewMenu extends React.Component {
               type="text" />
             <button type="submit" value="Submit" className="NewMenu__submit" >+</button>
           </form>}
-
+          <form
+          className="NewMenu__deleteform"
+          onSubmit={this.deleteMenu}>
+            <input
+             name="delMenu"
+             value={delMenu}
+             onChange={this.handleChange}
+             className="NewMenu__input delete"
+             type="text"/>
+            <button type="submit" value="Submit" className="NewMenu__submit">-</button>
+          </form>
       </div>
     )
   }
