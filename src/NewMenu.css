@@ -1,0 +1,48 @@
+.NewMenu__button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  font-size: calc(4px + 2vmin);
+  font-weight: 600;
+}
+.NewMenu__button:hover {
+  cursor: pointer;
+}
+.NewMenu__button:focus {
+  outline: none;
+}
+.NewMenu__form {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.NewMenu__input {
+  font-size: calc(8px + 2vmin);
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.2);
+  padding-left: 8px;
+}
+.NewMenu__input:focus {
+  outline: none;
+}
+.NewMenu__submit {
+  margin-left: 5px;
+  font-size: calc(8px + 2vmin);
+  font-weight: 700;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+.NewMenu__submit:hover {
+  cursor: pointer;
+}
+.NewMenu__submit:focus {
+  outline: none;
+}

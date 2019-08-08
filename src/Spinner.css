@@ -1,0 +1,52 @@
+.Spinner {
+  font-weight: 600;
+}
+
+.Spinner__fixed {
+  margin-bottom: 10px;
+}
+.Spinner__button {
+  font-size: calc(8px + 2vmin);
+  font-weight: 700;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 0.2);
+}
+.Spinner__button:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+.Spinner__menu {
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+}
+.Spinner__reset {
+  margin-top: 30px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: calc(4px + 2vmin);
+  font-weight: 600;
+}
+.Spinner__reset:hover {
+  cursor: pointer;
+  transition-duration: 300ms;
+  transform: translateY(5px);
+}
+.Spinner__reset:focus {
+  outline: none;
+}
+.Spinner__menubox {
+  position: fixed;
+  left: 3vw;
+  top: 10vh;
+}
+.Spinner__menulist {
+  word-break: normal;
+  font-size: calc(2px + 1vmin);
+  margin-bottom: 5px;
+}
