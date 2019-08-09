@@ -25,8 +25,8 @@ class Spinner extends React.Component {
       return "";
     }
     if (menuArray !== []) {
-      const randomID: number = Math.round(Math.random()*(menuArray.length-1) + 1);
-      const menu:any = menuArray.find((item:any) => item.id === randomID);
+      const randomID: number = Math.round(Math.random() * (menuArray.length-1));
+      const menu:any = menuArray[randomID];
       this.setState({menu: menu.name, showMenu: true});
     }
   }

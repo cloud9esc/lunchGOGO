@@ -58,12 +58,13 @@ class NewMenu extends React.Component {
     }
     const body = new FormData();
     body.append("menu", this.state.delMenu);
+    body.append("_method", "DELETE")
     const res = await fetch("http://192.168.1.24:8000/api/v1/lunch", {
       body,
       headers: {
         accept: "application/json",
       },
-      method: "DELETE",
+      method: "POST",
     });
     const {status, message} = await res.json();
     if(status === "failed") {
